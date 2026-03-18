@@ -1,0 +1,7 @@
+name: AstraDecoris
+version: '1.0.0'
+main: me.astralisvox.astradecoris.AstraDecoris
+api-version: '1.21'
+prefix: AstraDecoris
+authors: [ AstralisVox ]
+description: Chat formatting and style plugin
