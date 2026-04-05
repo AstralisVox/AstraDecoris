@@ -91,7 +91,7 @@ Mute:
     Enabled: true
     # If set to true, you'll be able to stop players using private messages if they are muted
     # The permission astradecoris.chat.mute.whisper.bypass will bypass this mute option
-    Include_private_messages: false
+    Include_Private_Messages: false
     Format: "&c[Mute] &cA member of the staff team has muted you."
 
 # ===========================

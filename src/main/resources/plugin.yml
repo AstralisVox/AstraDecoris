@@ -31,22 +31,37 @@ permissions:
     default: op
     children:
       astradecoris.update: true
+      astradecoris.reload: true
       astradecoris.chat.admin: true
   astradecoris.chat.admin:
     description: The wildcard permission for all the chat permissions below
     default: op
     children:
-      astradecoris.chat.admin: true
       astradecoris.chat.whisper: true
+      astradecoris.chat.whisper.see: true
+      astradecoris.chat.world: true
+      astradecoris.chat.world.see: true
       astradecoris.chat.mute: true
       astradecoris.chat.mute.global: true
       astradecoris.chat.mute.bypass: true
       astradecoris.chat.mute.whisper.bypass: true
+  astradecoris.reload:
+    description: The permission required to reload the plugin
+    default: op
   astradecoris.update:
     description: The permission to receive plugin update notifications
     default: op
   astradecoris.chat.whisper:
     description: The permission to send other players a private chat message
+    default: op
+  astradecoris.chat.whisper.see:
+    description: The permission to read other players private messages
+    default: op
+  astradecoris.chat.world:
+    description: The permission to use world specific chat
+    default: op
+  astradecoris.chat.world.see:
+    description: The permission to see world specific chat regardless of your world
     default: op
   astradecoris.chat.mute:
     description: The permission to mute other players
