@@ -1,0 +1,109 @@
+# -------------------------------------------------------------------------------------------
+#
+#  AstraDecoris Configuration File.
+#
+# Style and customise how your players interact with each other via the chat
+# Most of the features are customisable and permission-controlled.
+
+# ===========================
+# Supported Options
+# ===========================
+#
+# Full PlaceholderAPI support
+# Hex colour support
+# Custom Prefixes:
+#   %player% - Translates the players name without formatting
+#   %displayname% - Translates the players name with their custom displayname
+#   %suffix% - Translates the players suffix
+#   %prefix% - Translates the players prefix
+#   %message% - Translates the chat message
+#   %sender% - Translates the message senders name
+#   %receiver% - Translates the message receivers name
+#
+#  Wiki: https://github.com/AstralisVox/AstraDecoris/wiki
+#  Issues: https://github.com/AstralisVox/AstraDecoris/issues
+#
+# -------------------------------------------------------------------------------------------
+
+# ===========================
+# Chat Formats
+# ===========================
+
+# The default format that will be used if no other formats are being used.
+# If Group_Formats is set to true, this will be disabled.
+Default_Format:
+  Format: "%prefix% %displayname% %suffix% : &7%message%"
+
+# Set custom chat formats for different groups/ranks
+# Give the groups the permission `astradecoris.chat.group.<name>` to assign the formats to the group
+Group_Formats:
+  Enabled: true
+  Formats:
+    default: "%prefix% %displayname% %suffix% : &7%message%"
+    admin: "%prefix% %displayname% %suffix% : &c%message%"
+    owner: "%prefix% %displayname% %suffix% : &4%message%"
+
+# Set custom formats for sending and receiving private messages
+# Both the sender and the receiver can have a different format.
+Private_Messages:
+  Enabled: true
+  Formats:
+    Sender: "&aMe &7-> &c%receiver% &7: &8%message%"
+    Receiver: "&c%sender% &7-> &aMe &7: &8%message%"
+
+# Set custom formats for world specific messages
+# These messages are only world specific and won't be sent server wide.
+World_Messages:
+  Enabled: false
+  Worlds:
+    world:
+      Enabled: true
+      Format: "&e(Nether) %prefix% %displayname% %suffix%: &c%message%"
+    nether:
+      Enabled: true
+      Format: "&5(Nether) %prefix% %displayname% %suffix%: &c%message%"
+    the_end:
+      Enabled: true
+      Format: "&6(Nether) %prefix% %displayname% %suffix%: &c%message%"
+
+Broadcast:
+  Enabled: true
+  Format: "&c[NOTICE]: &a%message%"
+
+# ===========================
+# Additional Settings
+# ===========================
+
+# If enabled, all chat messages will be stored in the chat-log file.
+Chat_Log:
+  Enabled: true
+
+# Should AstraDecoris handle muting players
+Mute:
+  # If enabled, you'll be able to mute the entire chat so no one will be able to send messages
+  # Use the permission `astradecoris.chat.mute.bypass` to bypass the global mute
+  Global_Mutes:
+    Enabled: true
+    Format: "&c[Global Mute] &7Chat has been muted for the whole server."
+  # If enabled, you'll be able to mute players with AstraDecoris and the custom message below
+  # will be provided to the customer every time they try to speak.
+  Player_Mute:
+    Enabled: true
+    # If set to true, you'll be able to stop players using private messages if they are muted
+    # The permission astradecoris.chat.mute.whisper.bypass will bypass this mute option
+    Include_private_messages: false
+    Format: "&c[Mute] &cA member of the staff team has muted you."
+
+# ===========================
+# Update Notifications
+# ===========================
+
+# If set to true, those with the permission astradecoris.updates will receive messages
+# when the plugin updates on spigot
+Update_Notify: true
+
+# ===========================
+# Internal Use Only
+# ===========================
+# Do not modify. Used for automatic config migration.
+Config_Version: 1.0

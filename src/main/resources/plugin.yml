@@ -3,5 +3,60 @@ version: '1.0.0'
 main: me.astralisvox.astradecoris.AstraDecoris
 api-version: '1.21'
 prefix: AstraDecoris
-authors: [ AstralisVox ]
+author: AstralisVox
 description: Chat formatting and style plugin
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+
+commands:
+  astradecoris:
+    description: The main default command for the plugin
+    aliases: [ad, adecoris, astrad]
+    usage: /astradecoris
+  whisper:
+    description: The command to private message other players
+    aliases: [pm, dm, privatemessage, w]
+    permission: astradecoris.chat.whisper
+    permission-message: "&cYou do not have permission to use this command!"
+  mute:
+    description: The command to mute individual players or the entire server
+    permission: astradecoris.chat.mute
+    permission-message: "&cYou do not have permission to use this command!"
+
+permissions:
+  astradecoris.admin:
+    description: The wildcard permission that includes all the permissions below
+    default: op
+    children:
+      astradecoris.update: true
+      astradecoris.chat.admin: true
+  astradecoris.chat.admin:
+    description: The wildcard permission for all the chat permissions below
+    default: op
+    children:
+      astradecoris.chat.admin: true
+      astradecoris.chat.whisper: true
+      astradecoris.chat.mute: true
+      astradecoris.chat.mute.global: true
+      astradecoris.chat.mute.bypass: true
+      astradecoris.chat.mute.whisper.bypass: true
+  astradecoris.update:
+    description: The permission to receive plugin update notifications
+    default: op
+  astradecoris.chat.whisper:
+    description: The permission to send other players a private chat message
+    default: op
+  astradecoris.chat.mute:
+    description: The permission to mute other players
+    default: op
+  astradecoris.chat.mute.global:
+    description: The permission to mute all players globally
+    default: op
+  astradecoris.chat.mute.bypass:
+    description: The permission to bypass the global mutes
+    default: op
+  astradecoris.chat.mute.whisper.bypass:
+    description: The permission to bypass the private message block when muted
+    default: op

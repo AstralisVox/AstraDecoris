@@ -1,0 +1,11 @@
+# -------------------------------------------------------------------------------------------
+#
+#  AstraDecoris Chat Log.
+#
+# If Chat_Log is enabled in the config.yml, all chat messages will be stored here.
+#
+#  Wiki: https://github.com/AstralisVox/AstraDecoris/wiki
+#  Issues: https://github.com/AstralisVox/AstraDecoris/issues
+#
+# -------------------------------------------------------------------------------------------
+Chat_Log:
